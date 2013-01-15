@@ -1,5 +1,9 @@
 angular.module('enterprise', [])
 
 function AppCtrl($scope){
-	$scope.person = {name: "Picard"};
+	$scope.crew = [
+		{name: "Picard", description:"Captain"},
+		{name: "Ricker", description:"Number One"},
+		{name: "Worf", description:"Security"}
+	]
 }

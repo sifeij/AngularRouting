@@ -15,23 +15,25 @@
 <body>
 	<div ng-app="enterprise" ng-controller="AppCtrl">
 
-        {{person.name}}
+        <a href="/">
+            <h2>Enterprise Crew</h2>
+        </a>
         
         <!--using zen coding
         table>(thead>tr>td*3)+(tbody>tr>td*3)-->
-        <table>
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td><i class="icon-plus-sign"></i></td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody ng-repeat="person in crew">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.description}}</td>
+                    <td><i class="icon-edit"></i></td>
                 </tr>
             </tbody>
         </table>
