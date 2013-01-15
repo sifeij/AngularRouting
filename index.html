@@ -16,8 +16,30 @@
 	<div ng-app="enterprise" ng-controller="AppCtrl">
 
         <a href="/">
-            <h2>Enterprise Crew</h2>
+            <h2>Enterprise Crew from index.html</h2>
         </a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th><a href="/new"><i class="icon-plus-sign"></i></a></th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="person in crew">
+                <tr>
+                    <td>{{person.name}}</td>
+                    <td>{{person.description}}</td>
+                    <td><i class="icon-edit"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="/">
+            <h2>Enterprise Crew from partial/list.html</h2>
+        </a>
+
         <ng-view></ng-view>
 	</div>
 
