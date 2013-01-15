@@ -4,16 +4,31 @@ angular.module('enterprise', []).
 
 		$routeProvider.
 			when("/", {templateUrl:"/partials/list.html"}).
-			when("/new", {templateUrl:"/partials/edit.html", controller:"newCtrl"})
+			when("/new", {templateUrl:"/partials/edit.html", controller:"NewCtrl"})
+			when("/edit/:id", {templateUrl:"/partials/edit.html", controller:"EditCtrl"}).
+			otherwise({redirectTo:"/"}); //handle the url that does not exist
 	})
 
+function NewCtrl ($scope, $location, $routeParams) {
+	$scope.person = $scope.crew[$routeParams.id];
+	$scope.save = function(){
+		$location.path("/");
+}
+
 function NewCtrl ($scope, $location) {
+	$scope.person = {name:"", description:""};
+	$scope.save = function(){
+		$scope.crew.push($scope.person);
+		$location.path("/");
+	}	
+}
+
+function EditCtrl ($scope, $location) {
 	$scope.person = {name:"", description:""}
 	$scope.save = function(){
 		$scope.crew.push($scope.person);
 		$location.path("/");
-	}
-	
+	}	
 }
 
 function AppCtrl($scope){
