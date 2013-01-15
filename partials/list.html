@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td><i class="icon-plus-sign"></i></td>
+        </tr>
+    </thead>
+    <tbody ng-repeat="person in crew">
+        <tr>
+            <td>{{person.name}}</td>
+            <td>{{person.description}}</td>
+            <td><i class="icon-edit"></i></td>
+        </tr>
+    </tbody>
+</table>
