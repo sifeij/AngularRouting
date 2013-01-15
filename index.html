@@ -18,25 +18,7 @@
         <a href="/">
             <h2>Enterprise Crew</h2>
         </a>
-        
-        <!--using zen coding
-        table>(thead>tr>td*3)+(tbody>tr>td*3)-->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Description</td>
-                    <td><i class="icon-plus-sign"></i></td>
-                </tr>
-            </thead>
-            <tbody ng-repeat="person in crew">
-                <tr>
-                    <td>{{person.name}}</td>
-                    <td>{{person.description}}</td>
-                    <td><i class="icon-edit"></i></td>
-                </tr>
-            </tbody>
-        </table>
+        <ng-view></ng-view>
 	</div>
 
     <script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
