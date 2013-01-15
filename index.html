@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset=utf-8>
+    <title>AngularJS Routing for Enterprise Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="css/bootstrap.min.css">
+    <link rel=stylesheet href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<body>
+	<div ng-app="enterprise" ng-controller="AppCtrl">
+
+        {{person.name}}
+        
+        <!--using zen coding
+        table>(thead>tr>td*3)+(tbody>tr>td*3)-->
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+
+    <script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+    <script src="http://code.angularjs.org/angular-resource-1.0.0rc10.min.js"></script>
+
+    <!--<script src="lib/angular/angular-resource.js"></script>-->
+    <script src="app.js"></script>
+</body>
+</html>
