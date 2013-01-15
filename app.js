@@ -1,4 +1,8 @@
-angular.module('enterprise', [])
+angular.module('enterprise', []).
+	config(function($routeProvider){
+		$routeProvider.
+			when("/", {templateUrl:"/partials/list.html"})
+	})
 
 function AppCtrl($scope){
 	$scope.crew = [
