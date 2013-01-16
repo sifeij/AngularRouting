@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="enterprise">
 <head>
 	<meta charset=utf-8>
     <title>AngularJS Routing for Enterprise Application</title>
@@ -12,11 +12,24 @@
 	    <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<body>
-	<div ng-app="enterprise" ng-controller="AppCtrl">
 
-        <a href="/">
-            <h2>Enterprise Crew from index.html</h2>
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+ 
+        // Optionally these for CSS
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+      </script>
+    <![endif]-->
+<body>
+	<div ng-controller="AppCtrl">
+
+        <a href="/angularrouting/">
+            <h2>Enterprise Crew</h2>
         </a>
 
         <table class="table table-striped">
@@ -24,14 +37,14 @@
                 <tr>
                     <th>Name</th>
                     <th>Description</th>
-                    <th><a href="/new"><i class="icon-plus-sign"></i></a></th>
+                    <th><a href="/angularrouting/new"><i class="icon-plus-sign"></i></a></th>
                 </tr>
             </thead>
             <tbody ng-repeat="person in crew">
                 <tr>
                     <td>{{person.name}}</td>
                     <td>{{person.description}}</td>
-                    <td><a href="/edit{{$index}}"><i class="icon-edit"></i></a></td>
+                    <td><a href="/angularrouting/edit/{{$index}}"><i class="icon-edit"></i></a></td>
                 </tr>
             </tbody>
         </table>
@@ -40,7 +53,11 @@
             <h2>Enterprise Crew from partial/list.html</h2>
         </a>
 
+        ng-view tag:<br>
         <ng-view></ng-view>
+        <br>
+        div tag with ng-view attribute:<br>
+        <div ng-view></div>
 	</div>
 
     <script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
