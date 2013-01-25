@@ -1,14 +1,14 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Name (ng-bind)</th>
+            <th>Description (double curly braces)</th>
             <th><a href="/new"><i class="icon-plus-sign"></i></a></th>
         </tr>
     </thead>
     <tbody ng-repeat="person in crew">
         <tr>
-            <td>{{person.name}}</td>
+            <td ng-bind="person.name || '?'">?</td>
             <td>{{person.description}}</td>
             <td><a href="/edit/{{$index}}"><i class="icon-edit"></i></a></td>
         </tr>

@@ -2,6 +2,23 @@
 <html lang="en" ng-app="enterprise">
 <head>
 	<meta charset=utf-8>
+
+    <!-- Flash of Unstyled Content - User will se {{}} on index.html
+        1. using ng-clock so that {{}} will not display when page load:
+            a. create a style
+            b. placing ng-cloak in the body tag
+            This will tell the browser please do not render the body
+            The drawback is - there is a delay
+         2. use ng-bind instead of {{interpolation}} - this is recommanded
+            <span ng-bind="projects.length || '?'">?</span>
+            This should be only used for index.html, not other pages.
+    -->
+    <style>
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
+
     <title>AngularJS Routing for Enterprise Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=stylesheet href="css/bootstrap.min.css">
@@ -35,14 +52,14 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th>Name (ng-bind)</th>
+                    <th>Description (double curly braces)</th>
                     <th><a href="/new"><i class="icon-plus-sign"></i></a></th>
                 </tr>
             </thead>
             <tbody ng-repeat="person in crew">
                 <tr>
-                    <td>{{person.name}}</td>
+                    <td ng-bind="person.name || '?'">?</td>
                     <td>{{person.description}}</td>
                     <td><a href="/edit/{{$index}}"><i class="icon-edit"></i></a></td>
                 </tr>
